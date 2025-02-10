@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  padding: 6rem 0;
+}
+
+.section-heading {
+  @apply text-4xl md:text-5xl font-light mb-16;
+}
+
