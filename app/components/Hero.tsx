@@ -1,29 +1,26 @@
-"use client"
+import Image from "next/image"
+import { ArrowDown } from "lucide-react"
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Moon, Sun } from "lucide-react"
-
-export default function Header() {
-  const [isDarkMode, setIsDarkMode] = useState(false)
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode)
-    document.documentElement.classList.toggle("dark")
-  }
-
+export default function Hero() {
   return (
-    <header className="bg-winter-blue-100 dark:bg-winter-blue-800 shadow-md">
-      <nav className="container max-w-screen-md mx-auto px-2 sm:px-4 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-winter-blue-800 dark:text-winter-blue-100">山田太郎</h1>
-        <Button variant="ghost" size="icon" onClick={toggleDarkMode}>
-          {isDarkMode ? (
-            <Sun className="h-[1.2rem] w-[1.2rem] text-winter-blue-100" />
-          ) : (
-            <Moon className="h-[1.2rem] w-[1.2rem] text-winter-blue-800" />
-          )}
-        </Button>
-      </nav>
-    </header>
+    <section className="relative h-screen flex items-center">
+      <Image
+        src="/placeholder-top.png"
+        alt="Background"
+        fill
+        className="object-cover opacity-50"
+        priority
+      />
+      <div className="container mx-auto px-4 z-10">
+        <h1 className="text-5xl md:text-7xl font-light leading-tight max-w-3xl">
+          Nanasa Kamimura
+        </h1>
+        <p className="mt-4 text-lg font-light text-gray-600">Web Director based in Tokyo</p>
+      </div>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-sm">
+        <span className="mb-2">SCROLL</span>
+        <ArrowDown size={20} className="animate-bounce" />
+      </div>
+    </section>
   )
 }
