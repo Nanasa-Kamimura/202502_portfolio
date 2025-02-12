@@ -1,11 +1,3 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export',
-  basePath: '/202502_portfolio',
-  assetPrefix: '/202502_portfolio/',
-  trailingSlash: true,
-};
-
 module.exports = nextConfig;
 
 let userConfig = undefined
