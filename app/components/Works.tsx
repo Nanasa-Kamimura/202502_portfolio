@@ -4,7 +4,7 @@ const projects = [
   {
     title: "Project 01",
     description: "株式会社ゲッタウェイ　プロジェクトコーポレートページ",
-    image: "/g-lung.png",  // ここを変更
+    image: "/g-lung.png",
   },
   {
     title: "Project 02",
@@ -46,12 +46,14 @@ export default function Works() {
         <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8">
           {projects.map((project, index) => (
             <div key={index} className="group relative">
-              <div className="relative h-[400px] w-full overflow-hidden">
+              {/* アスペクト比を維持 */}
+              <div className="relative w-full aspect-[16/9] overflow-hidden">
                 <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
-                  layout="fill"
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={800} // 適当な値（変更可）
+                  height={450} // 16:9 の比率
+                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <div className="mt-4">
