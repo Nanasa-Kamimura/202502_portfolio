@@ -1,3 +1,11 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  basePath: '/02502_portfolio',
+  assetPrefix: '/02502_portfolio/',
+  trailingSlash: true,
+};
+
 module.exports = nextConfig;
 
 let userConfig = undefined
