@@ -1,4 +1,4 @@
-module.exports = nextConfig;
+module.exports = nextConfig; // ❌ ESモジュールでは使えない
 
 let userConfig = undefined
 try {
@@ -47,4 +47,4 @@ function mergeConfig(nextConfig, userConfig) {
   }
 }
 
-export default nextConfig
+export default nextConfig // ✅ こっちは正しい
