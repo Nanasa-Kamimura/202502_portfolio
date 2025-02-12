@@ -52,7 +52,7 @@ export default function Works() {
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
                   width={800} // 必要に応じて調整
-                  height={450} // 16:9 の比率（適宜変更）
+                  height={800} // 16:9 の比率（適宜変更）
                   className="object-contain w-full h-auto transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
