@@ -1,6 +1,4 @@
-module.exports = nextConfig; // ❌ ESモジュールでは使えない
-
-let userConfig = undefined
+let userConfig = undefined;
 try {
   userConfig = await import('./v0-user-next.config')
 } catch (e) {
@@ -25,11 +23,11 @@ const nextConfig = {
   },
 }
 
-mergeConfig(nextConfig, userConfig)
+mergeConfig(nextConfig, userConfig);
 
 function mergeConfig(nextConfig, userConfig) {
   if (!userConfig) {
-    return
+    return;
   }
 
   for (const key in userConfig) {
@@ -42,9 +40,10 @@ function mergeConfig(nextConfig, userConfig) {
         ...userConfig[key],
       }
     } else {
-      nextConfig[key] = userConfig[key]
+      nextConfig[key] = userConfig[key];
     }
   }
 }
 
-export default nextConfig // ✅ こっちは正しい
+// ESモジュールの書き方でデフォルトエクスポート
+export default nextConfig;
