@@ -1,7 +1,7 @@
 import Hero from "./components/Hero"
 import About from "./components/About"
 import Works from "./components/Works"
-import Skills from './components/Skills'
+import Skills from './components/skills'
 import Contact from "./components/Contact"
 import PageIndicator from "./components/PageIndicator"
 
