@@ -1,9 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { Menu, X } from "lucide-react"
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     if (typeof window === "undefined") return
@@ -17,6 +19,7 @@ export default function Navigation() {
     const element = document.getElementById(id)
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" })
+      setIsMenuOpen(false)
     }
   }
 
@@ -30,17 +33,22 @@ export default function Navigation() {
         <a href="/" className="text-xl font-light">
           PORTFOLIO
         </a>
-        <div className="space-x-8 text-sm">
-          <a href="/#about" onClick={(e) => { e.preventDefault(); scrollToSection("about") }} className="hover:text-gray-600 transition-colors">
+        <div className="md:hidden">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+        <div className={`md:flex space-x-8 text-sm ${isMenuOpen ? "block" : "hidden"} md:block absolute md:relative top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none p-4 md:p-0`}>
+          <a href="/#about" onClick={(e) => { e.preventDefault(); scrollToSection("about") }} className="block md:inline hover:text-gray-600 transition-colors py-2">
             ABOUT
           </a>
-          <a href="/#works" onClick={(e) => { e.preventDefault(); scrollToSection("works") }} className="hover:text-gray-600 transition-colors">
+          <a href="/#works" onClick={(e) => { e.preventDefault(); scrollToSection("works") }} className="block md:inline hover:text-gray-600 transition-colors py-2">
             WORKS
           </a>
-          <a href="/#skills" onClick={(e) => { e.preventDefault(); scrollToSection("skills") }} className="hover:text-gray-600 transition-colors">
+          <a href="/#skills" onClick={(e) => { e.preventDefault(); scrollToSection("skills") }} className="block md:inline hover:text-gray-600 transition-colors py-2">
             SKILLS
           </a>
-          <a href="/#contact" onClick={(e) => { e.preventDefault(); scrollToSection("contact") }} className="hover:text-gray-600 transition-colors">
+          <a href="/#contact" onClick={(e) => { e.preventDefault(); scrollToSection("contact") }} className="block md:inline hover:text-gray-600 transition-colors py-2">
             CONTACT
           </a>
         </div>
