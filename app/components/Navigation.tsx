@@ -15,6 +15,20 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  useEffect(() => {
+    // スクロールを無効化
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+
+    // クリーンアップ関数で元に戻す
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [isMenuOpen])
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
     if (element) {
@@ -24,32 +38,91 @@ export default function Navigation() {
   }
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "py-4 bg-white/90 backdrop-blur-sm" : "py-6"
-      }`}
+     <nav
+      className={`fixed w-full z-50 h-20 flex items-center transition-all duration-300 ${
+      isMenuOpen ? "bg-white/90 backdrop-blur-sm" : isScrolled ? "bg-white/90 backdrop-blur-sm" : ""
+        }`}
     >
+
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="/" className="text-xl font-light">
           PORTFOLIO
         </a>
+
+        {/* スマホサイズのハンバーガーメニュー */}
         <div className="md:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={24} /> : <Menu size={27} />}
           </button>
         </div>
-        <div className={`md:flex space-x-8 text-sm ${isMenuOpen ? "block" : "hidden"} md:block absolute md:relative top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none p-4 md:p-0`}>
-          <a href="/#about" onClick={(e) => { e.preventDefault(); scrollToSection("about") }} className="block md:inline hover:text-gray-600 transition-colors py-2">
-            ABOUT
+
+        {/* PCサイズのメニュー */}
+        <div
+          className={`hidden md:flex md:space-x-8 text-xl font-light md:relative bg-transparent transition-all duration-300`}
+        >
+          <a
+            href="/#about"
+            onClick={(e) => { e.preventDefault(); scrollToSection("about") }}
+            className="block md:inline hover:text-gray-600 transition-colors py-2"
+          >
+            -About
           </a>
-          <a href="/#works" onClick={(e) => { e.preventDefault(); scrollToSection("works") }} className="block md:inline hover:text-gray-600 transition-colors py-2">
-            WORKS
+          <a
+            href="/#works"
+            onClick={(e) => { e.preventDefault(); scrollToSection("works") }}
+            className="block md:inline hover:text-gray-600 transition-colors py-2"
+          >
+            -Works
           </a>
-          <a href="/#skills" onClick={(e) => { e.preventDefault(); scrollToSection("skills") }} className="block md:inline hover:text-gray-600 transition-colors py-2">
-            SKILLS
+          <a
+            href="/#skills"
+            onClick={(e) => { e.preventDefault(); scrollToSection("skills") }}
+            className="block md:inline hover:text-gray-600 transition-colors py-2"
+          >
+            -Skills
           </a>
-          <a href="/#contact" onClick={(e) => { e.preventDefault(); scrollToSection("contact") }} className="block md:inline hover:text-gray-600 transition-colors py-2">
-            CONTACT
+          <a
+            href="/#contact"
+            onClick={(e) => { e.preventDefault(); scrollToSection("contact") }}
+            className="block md:inline hover:text-gray-600 transition-colors py-2"
+          >
+            -Contact
+          </a>
+        </div>
+
+        {/* スマホサイズのメニューが開かれた時 */}
+        <div
+          className={`md:hidden fixed inset-0 top-12 bg-white/95 z-40 ${
+            isMenuOpen ? "flex" : "hidden"
+          } flex-col h-screen items-center justify-center space-y-4 pt-16`}
+        >
+          <a
+            href="/#about"
+            onClick={(e) => { e.preventDefault(); scrollToSection("about") }}
+            className="block text-xl font-light hover:text-gray-600 transition-colors py-2"
+          >
+            About
+          </a>
+          <a
+            href="/#works"
+            onClick={(e) => { e.preventDefault(); scrollToSection("works") }}
+            className="block text-xl font-light hover:text-gray-600 transition-colors py-2"
+          >
+            Works
+          </a>
+          <a
+            href="/#skills"
+            onClick={(e) => { e.preventDefault(); scrollToSection("skills") }}
+            className="block text-xl font-light hover:text-gray-600 transition-colors py-2"
+          >
+            Skills
+          </a>
+          <a
+            href="/#contact"
+            onClick={(e) => { e.preventDefault(); scrollToSection("contact") }}
+            className="block text-xl font-light hover:text-gray-600 transition-colors py-2"
+          >
+            Contact
           </a>
         </div>
       </div>
