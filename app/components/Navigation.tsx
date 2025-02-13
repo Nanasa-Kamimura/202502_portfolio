@@ -65,28 +65,28 @@ export default function Navigation() {
             onClick={(e) => { e.preventDefault(); scrollToSection("about") }}
             className="block md:inline hover:text-gray-600 transition-colors py-2"
           >
-            -About
+            About
           </a>
           <a
             href="/#works"
             onClick={(e) => { e.preventDefault(); scrollToSection("works") }}
             className="block md:inline hover:text-gray-600 transition-colors py-2"
           >
-            -Works
+            Works
           </a>
           <a
             href="/#skills"
             onClick={(e) => { e.preventDefault(); scrollToSection("skills") }}
             className="block md:inline hover:text-gray-600 transition-colors py-2"
           >
-            -Skills
+            Skills
           </a>
           <a
             href="/#contact"
             onClick={(e) => { e.preventDefault(); scrollToSection("contact") }}
             className="block md:inline hover:text-gray-600 transition-colors py-2"
           >
-            -Contact
+            Contact
           </a>
         </div>
 
@@ -94,7 +94,7 @@ export default function Navigation() {
         <div
           className={`md:hidden fixed inset-0 top-12 bg-white/95 z-40 ${
             isMenuOpen ? "flex" : "hidden"
-          } flex-col h-screen items-center justify-center space-y-4`}
+          } flex-col h-screen items-center justify-start space-y-4 pt-40`}
         >
           <a
             href="/#about"
