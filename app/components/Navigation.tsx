@@ -94,7 +94,7 @@ export default function Navigation() {
         <div
           className={`md:hidden fixed inset-0 top-12 bg-white/95 z-40 ${
             isMenuOpen ? "flex" : "hidden"
-          } flex-col h-screen items-center justify-center space-y-4 pt-16`}
+          } flex-col h-screen items-center justify-center space-y-4`}
         >
           <a
             href="/#about"
