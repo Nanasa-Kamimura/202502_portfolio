@@ -19,3 +19,18 @@ section {
   @apply text-4xl md:text-5xl font-light mb-16;
 }
 
+/* 矢印のスタイル */
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;  /* 左斜め部分 */
+  border-right: 5px solid transparent; /* 右斜め部分 */
+  border-top: 7px solid black;         /* 上の部分 */
+  display: inline-block;
+  transition: transform 0.3s ease;      /* クリック時にスムーズに回転 */
+  background-color: transparent;       /* 背景色なし */
+}
+
+.arrow.rotate-180 {
+  transform: rotate(180deg); /* 折りたたみ時に矢印を下向きに回転 */
+}
