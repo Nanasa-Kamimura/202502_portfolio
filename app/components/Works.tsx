@@ -104,18 +104,17 @@ export default function Works() {
               </div>
               
               {/* タイトル・会社名と矢印 */}
-              <div className="mt-4 flex items-center justify-between">
+              <div
+                className="mt-4 flex items-center justify-between cursor-pointer"
+                onClick={() => toggleDetails(index)}  // クリックで詳細を表示/非表示
+              >
                 <h3 className="text-xl font-light">{project.title}</h3>
-                <button
-                  className="text-gray-600 text-2xl p-1 border-gray-400"
-                  onClick={() => toggleDetails(index)}
-                >
-                  <span className={`arrow ${activeIndex === index ? "rotate-180" : ""}`}></span>
-                </button>
+                <span
+                  className={`arrow ${activeIndex === index ? "rotate-180" : ""}`}
+                ></span>
               </div>
               <p className="text-gray-600">{project.description}</p>
-            
-              
+
               {/* 詳細情報（クリックで表示） */}
               {activeIndex === index && (
                 <div className="mt-2 p-3 bg-gray-50 rounded-md">
