@@ -7,11 +7,11 @@ export default function About() {
         <h2 className="section-heading">About</h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-lg leading-relaxed text-gray-600 mb-6">
+            <p className="text-lg leading-relaxed text-gray-600 mb-6 text-sm">
               東京コミュニケーション専門学校にて、Webデザインを多角的に学び卒業後、フロントエンド開発を経験。
               その後、2社でWebディレクターとして開発やデザイン知識を活かし、新規Web事業に携わりました。
             </p>
-            <p className="text-lg leading-relaxed text-gray-600">
+            <p className="text-lg leading-relaxed text-gray-600 text-sm">
               移り変わりの早いWeb業界の中で、「貪欲に成長続ける」を胸に個人でもWeb制作を行なっています。
             </p>
           </div>
