@@ -17,7 +17,7 @@ export default function Hero() {
         </h1>
         <p className="mt-4 text-lg font-light text-gray-600">Web Director based in Tokyo</p>
       </div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-sm">
+      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center text-sm">
         <span className="mb-2">SCROLL</span>
         <ArrowDown size={20} className="animate-bounce" />
       </div>
