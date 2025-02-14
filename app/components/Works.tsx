@@ -11,8 +11,8 @@ const projects = [
     image: "/g-lung.png",
     details: {
       Production: "コーポレートページ制作の他、「コワーキングスペース」「民宿」の予約サイトの設定や決済システム（Paidy）の導入等を行いました。",
-      Job: "ディレクター（webデザイン,フロントエンド開発）",
-      Productionperiod:"2023年7月~2024年4月",
+      Job: "\nディレクター（webデザイン,フロントエンド開発）",
+      Productionperiod:"\n2023年7月~2024年4月",
     },
   },
 {
@@ -20,9 +20,9 @@ const projects = [
   description:"株式会社ゲッタウェイ",
   image: "/goldengate.png",
   details: {
-    Production: "Golden Gate（コワーキングスペース）JI PANG（民宿）の専用サイトの企画から作成を行いました。",
-    Job: "ディレクター（webデザイン,フロントエンド開発）",
-    Productionperiod:"2023年7月~2024年3月",
+    Production: "Golden Gate（コワーキングスペース）JI PANG（民宿）の専用サイトを企画から携わり制作を行いました。",
+    Job: "\nディレクター（webデザイン,フロントエンド開発）",
+    Productionperiod:"\n2023年7月~2024年3月",
   },
 },
 {
@@ -31,8 +31,8 @@ const projects = [
   image: "/prowing.png",
   details: {
     Production:"採用サイトのデザイン作成を行い、コーディングではパートナー会社様と連携のもと制作いたしました。",
-    Job: "Webディレクター（webデザイン）",
-    Productionperiod:"2023年11月~2024年2月",
+    Job: "\nWebディレクター（webデザイン）",
+    Productionperiod:"\n2023年11月~2024年2月",
   },
 },
 {
@@ -41,8 +41,8 @@ const projects = [
   image: "/wazamono.png",
   details: {
     Production: "クラウドファンディングに伴う商品サイトのご依頼。企画からデザイン、開発を行いました。",
-    Job: "Webディレクター（webデザイン,フロントエンド開発）",
-    Productionperiod:"2023年10月~2023年11月",
+    Job: "\nWebディレクター（webデザイン,フロントエンド開発）",
+    Productionperiod:"\n2023年10月~2023年11月",
   },
   },
   {
@@ -51,8 +51,8 @@ const projects = [
     image: "/ziplus.png",
     details: {
       Production: "中国向けアプリWeChatミニプログラムの作成。3事業を踏襲したページ作成を企画からデザインまで一貫して行いました。",
-      Job: "Webディレクター（webデザイン）",
-      Productionperiod:"2024年10月~2024年11月",
+      Job: "\nWebディレクター（webデザイン）",
+      Productionperiod:"\n2024年10月~2024年11月",
     },
   },
   {
@@ -61,8 +61,8 @@ const projects = [
     image: "/osaka.png",
     details: {
       Production: "中国向けアプリWeChatミニプログラムの作成。大阪市立様4月のリニューアルオープンに向けたページ作成を企画からデザインまで一貫して行いました。",
-      Job: "Webディレクター（webデザイン）",
-      Productionperiod:"2024年10月~2024年11月",
+      Job: "\nWebディレクター（webデザイン）",
+      Productionperiod:"\n2024年10月~2024年11月",
     },
   },
   {
@@ -70,9 +70,9 @@ const projects = [
     description: "日本電子学校様",
     image: "/nihon.png",
     details: {
-      Production: "中国向けアプリWeChatミニプログラムの改修。入学手順や入学資格ページを企画から追加制作いたしました。",
-      Job: "Webディレクター（webデザイン）",
-      Productionperiod:"2024年6月~2024年8月",
+      Production:"中国向けアプリWeChatミニプログラムの改修。入学手順や入学資格ページを企画から追加制作いたしました。",
+      Job:"\nWebディレクター（webデザイン）",
+      Productionperiod:"\n2024年6月~2024年8月",
     },
 },
 ];
@@ -117,11 +117,31 @@ export default function Works() {
 
               {/* 詳細情報（クリックで表示） */}
               {activeIndex === index && (
-                <div className="mt-2 p-3 bg-gray-50 rounded-md">
-                  <p><strong>Production:</strong> {project.details.Production}</p>
-                  <p><strong>Job:</strong> {project.details.Job}</p> {/* 追加 */}
-                  <p><strong>Production period:</strong> {project.details.Productionperiod}</p> {/* 追加 */}
-                 </div>
+                <div className="mt-2 p-3 bg-gray-50 rounded-md text-sm">
+                  <p>
+                    <strong>Production</strong><br />
+                    {project.details.Production.split("\n").map((line, i) => (
+                      <React.Fragment key={i}>
+                        {line}
+                        <br />
+                      </React.Fragment>
+                    ))}
+                  </p>
+                  <p><strong>Job</strong>
+                   {project.details.Job.split("\n").map((line, i) => (
+                    <React.Fragment key={i}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  ))}</p>
+                  <p><strong>Production period</strong> 
+                  {project.details.Productionperiod.split("\n").map((line, i) => (
+                    <React.Fragment key={i}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  ))}</p>
+                </div>
               )}
             </div>
           ))}
