@@ -10,19 +10,19 @@ const projects = [
     description: "株式会社ゲッタウェイ　プロジェクトコーポレートページ",
     image: "/g-lung.png",
     details: {
-      client: "株式会社ゲッタウェイ",
-      concept: "ブランドイメージ向上",
-      productionDetails: "レスポンシブデザイン、CMS導入",
+      Production: "コーポレートページ制作の他、「コワーキングスペース」「民宿」の予約サイトの設定や決済システム（Paidy）の導入等を行いました。",
+      Job: "ディレクター（webデザイン,フロントエンド開発）",
+      Productionperiod:"2023年7月~2024年4月",
     },
   },
 {
   title: "Project 02",
-  description: "株式会社ゲッタウェイ　事業紹介ページ",
+  description:"株式会社ゲッタウェイ",
   image: "/goldengate.png",
   details: {
-    client: "株式会社ゲッタウェイ",
-    concept: "サービス認知拡大",
-    productionDetails: "シンプルなUIデザイン",
+    Production: "Golden Gate（コワーキングスペース）JI PANG（民宿）の専用サイトの企画から作成を行いました。",
+    Job: "ディレクター（webデザイン,フロントエンド開発）",
+    Productionperiod:"2023年7月~2024年3月",
   },
 },
 {
@@ -30,9 +30,9 @@ const projects = [
   description: "株式会社プロウィング様　リクルートサイト",
   image: "/prowing.png",
   details: {
-    client: "株式会社プロウィング",
-    concept: "採用強化",
-    productionDetails: "動的コンテンツ対応",
+    Production:"採用サイトのデザイン作成を行い、コーディングではパートナー会社様と連携のもと制作いたしました。",
+    Job: "Webディレクター（webデザイン）",
+    Productionperiod:"2023年11月~2024年2月",
   },
 },
 {
@@ -40,9 +40,9 @@ const projects = [
   description: "WAZAMONO　商品紹介サイト",
   image: "/wazamono.png",
   details: {
-    client: "株式会社プロウィング",
-    concept: "採用強化",
-    productionDetails: "動的コンテンツ対応",
+    Production: "クラウドファンディングに伴う商品サイトのご依頼。企画からデザイン、開発を行いました。",
+    Job: "Webディレクター（webデザイン,フロントエンド開発）",
+    Productionperiod:"2023年10月~2023年11月",
   },
   },
   {
@@ -50,9 +50,9 @@ const projects = [
     description: "株式会社ZIPLUS様",
     image: "/ziplus.png",
     details: {
-      client: "株式会社プロウィング",
-      concept: "採用強化",
-      productionDetails: "動的コンテンツ対応",
+      Production: "中国向けアプリWeChatミニプログラムの作成。3事業を踏襲したページ作成を企画からデザインまで一貫して行いました。",
+      Job: "Webディレクター（webデザイン）",
+      Productionperiod:"2024年10月~2024年11月",
     },
   },
   {
@@ -60,9 +60,9 @@ const projects = [
     description: "大阪市立美術館様",
     image: "/osaka.png",
     details: {
-      client: "株式会社プロウィング",
-      concept: "採用強化",
-      productionDetails: "動的コンテンツ対応",
+      Production: "中国向けアプリWeChatミニプログラムの作成。大阪市立様4月のリニューアルオープンに向けたページ作成を企画からデザインまで一貫して行いました。",
+      Job: "Webディレクター（webデザイン）",
+      Productionperiod:"2024年10月~2024年11月",
     },
   },
   {
@@ -70,9 +70,9 @@ const projects = [
     description: "日本電子学校様",
     image: "/nihon.png",
     details: {
-      client: "株式会社プロウィング",
-      concept: "採用強化",
-      productionDetails: "動的コンテンツ対応",
+      Production: "中国向けアプリWeChatミニプログラムの改修。入学手順や入学資格ページを企画から追加制作いたしました。",
+      Job: "Webディレクター（webデザイン）",
+      Productionperiod:"2024年6月~2024年8月",
     },
 },
 ];
@@ -118,10 +118,10 @@ export default function Works() {
               {/* 詳細情報（クリックで表示） */}
               {activeIndex === index && (
                 <div className="mt-2 p-3 bg-gray-50 rounded-md">
-                  <p><strong>Client:</strong> {project.details.client}</p>
-                  <p><strong>Concept:</strong> {project.details.concept}</p>
-                  <p><strong>Production Details:</strong> {project.details.productionDetails}</p>
-                </div>
+                  <p><strong>Production:</strong> {project.details.Production}</p>
+                  <p><strong>Job:</strong> {project.details.Job}</p> {/* 追加 */}
+                  <p><strong>Production period:</strong> {project.details.Productionperiod}</p> {/* 追加 */}
+                 </div>
               )}
             </div>
           ))}
