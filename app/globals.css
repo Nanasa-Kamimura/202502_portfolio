@@ -29,8 +29,9 @@ section {
   display: inline-block;
   transition: transform 0.3s ease;      /* クリック時にスムーズに回転 */
   background-color: transparent;       /* 背景色なし */
+  transform: translateX(-10px);
 }
 
 .arrow.rotate-180 {
-  transform: rotate(180deg); /* 折りたたみ時に矢印を下向きに回転 */
+  transform: rotate(180deg) translateX(10px); /* 折りたたみ時に矢印を下向きに回転 */
 }
