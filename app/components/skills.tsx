@@ -1,14 +1,17 @@
 const skills = [
+  "PowerPoint",
+  "Word",
+  "Excel",
+  "figma",
+  "XD",
+  "Illustrator",
+  "Photoshop",
   "JavaScript",
   "TypeScript",
   "React",
   "Next.js",
   "Node.js",
-  "Express",
   "MongoDB",
-  "PostgreSQL",
-  "GraphQL",
-  "REST APIs",
   "Git",
 ]
 
@@ -28,4 +31,3 @@ export default function Skills() {
     </section>
   )
 }
-
