@@ -27,7 +27,7 @@ export default function PageIndicator() {
   }, [])
 
   return (
-    <div className="fixed left-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
+    <div className="fixed right-5 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
       {sections.map((_, index) => (
         <div
           key={index}
