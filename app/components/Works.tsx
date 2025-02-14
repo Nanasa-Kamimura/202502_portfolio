@@ -107,17 +107,18 @@ export default function Works() {
               <div className="mt-4 flex items-center justify-between">
                 <h3 className="text-xl font-light">{project.title}</h3>
                 <button
-                  className="text-gray-600 text-2xl p-1 rounded-full border border-gray-400"
+                  className="text-gray-600 text-2xl p-1 border-gray-400"
                   onClick={() => toggleDetails(index)}
                 >
-                  {activeIndex === index ? "▲" : "▼"}
+                  <span className={`arrow ${activeIndex === index ? "rotate-180" : ""}`}></span>
                 </button>
               </div>
               <p className="text-gray-600">{project.description}</p>
+            
               
               {/* 詳細情報（クリックで表示） */}
               {activeIndex === index && (
-                <div className="mt-2 p-3 bg-gray-５0 rounded-md">
+                <div className="mt-2 p-3 bg-gray-50 rounded-md">
                   <p><strong>Client:</strong> {project.details.client}</p>
                   <p><strong>Concept:</strong> {project.details.concept}</p>
                   <p><strong>Production Details:</strong> {project.details.productionDetails}</p>
