@@ -1,3 +1,11 @@
+// next.config.js
+module.exports = {
+  output: 'export', // 静的サイトとしてエクスポート
+  experimental: {
+    appDir: true,  // App Routerを有効化する
+  },
+};
+
 let userConfig = undefined;
 try {
   userConfig = await import('./v0-user-next.config')
